@@ -52,22 +52,10 @@
     max     109008.000       52070.000  3.946e+07
 
 `.values`: A two-dimensional NumPy array of values.
-`.columns`: An index of columns: the column names.
-`.index`: An index for the rows: either row numbers or row names.
-
-    # Print the head of the homelessness data
-    print(homelessness.shape)
-    # Import pandas using the alias pd
-    import pandas as pd
 
     # Print the values of homelessness
     print(homelessness.values)
 
-    # Print the column index of homelessness
-    print(homelessness.columns)
-
-    # Print the row index of homelessness
-    print(homelessness.index)
     [['East South Central' 'Alabama' 2570.0 864.0 4887681]
      ['Pacific' 'Alaska' 1434.0 582.0 735139]
      ['Mountain' 'Arizona' 7259.0 2606.0 7158024]
@@ -119,10 +107,23 @@
      ['South Atlantic' 'West Virginia' 1021.0 222.0 1804291]
      ['East North Central' 'Wisconsin' 2740.0 2167.0 5807406]
      ['Mountain' 'Wyoming' 434.0 205.0 577601]]
+     
+`.columns`: An index of columns: the column names.
+    
+    # Print the column index of homelessness
+    Index(['region', 'state', 'individuals', 'family_members', 'state_pop'], dtype='object')
+
+`.index`: An index for the rows: either row numbers or row names.
+
+    # Print the row index of homelessness
+    print(homelessness.index)
+    
     Index(['region', 'state', 'individuals', 'family_members', 'state_pop'], dtype='object')
     Int64Index([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48,
                 49, 50],
                dtype='int64')
+               
+ 
 
 
 
