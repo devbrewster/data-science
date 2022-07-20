@@ -1,4 +1,5 @@
 ## PANDAS CHEATSHEET
+
 `.head()` returns the first few rows of a DataFrame<br />
     
     print(homelessness.head())
@@ -124,9 +125,13 @@
                dtype='int64')
                
  
+## Sorting and subsetting
 
-
-
+Sort on … 	            Syntax
+--------------------------------------------------------------
+|one column      	|   df.sort_values("breed")
+|multiple columns 	|   df.sort_values(["breed", "weight_kg"])
+---------------------------------------------------------------
 
 
 
