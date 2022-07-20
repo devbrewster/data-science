@@ -127,11 +127,10 @@
  
 ## Sorting and subsetting
 
-Sort on … 	            Syntax
---------------------------------------------------------------
-|one column      	|   df.sort_values("breed")
-|multiple columns 	|   df.sort_values(["breed", "weight_kg"])
----------------------------------------------------------------
+| Sort on … 	    | Syntax                                |
+| ----------------------------------------------------------|
+| one column      	| df.sort_values("breed")               |
+| multiple columns 	| df.sort_values(["breed", "weight_kg"])|
 
 
 
