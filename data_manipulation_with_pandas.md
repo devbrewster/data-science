@@ -386,6 +386,37 @@ Add a new column to `homelessness`, named `total`, containing the sum of the `in
     48      South Atlantic         West Virginia       1021.0           222.0    1804291    1243.0          0.821
     49  East North Central             Wisconsin       2740.0          2167.0    5807406    4907.0          0.558
     50            Mountain               Wyoming        434.0           205.0     577601     639.0          0.679
+    
+## Combo-attack!
+
+Add a column to `homelessness`, `indiv_per_10k`, containing the number of homeless individuals per ten thousand people in each state.
+Subset rows where `indiv_per_10k` is higher than `20`, assigning to `high_homelessness`.
+Sort `high_homelessness` by descending `indiv_per_10k`, assigning to `high_homelessness_srt`.
+Select only the `state` and `indiv_per_10k` columns of `high_homelessness_srt` and save as `result`. Look at the `result`.
+
+    # Create indiv_per_10k col as homeless individuals per 10k state pop
+    homelessness["indiv_per_10k"] = 10000 * homelessness['individuals'] / homelessness['state_pop'] 
+
+    # Subset rows for indiv_per_10k greater than 20
+    high_homelessness = homelessness[homelessness['indiv_per_10k'] > 20]
+
+    # Sort high_homelessness by descending indiv_per_10k
+    high_homelessness_srt = high_homelessness.sort_values('indiv_per_10k', ascending=False)
+
+    # From high_homelessness_srt, select the state and indiv_per_10k cols
+    result = high_homelessness_srt[['state', 'indiv_per_10k']]
+
+    # See the result
+    print(result)
+                       state  indiv_per_10k
+    8   District of Columbia         53.738
+    11                Hawaii         29.079
+    4             California         27.624
+    37                Oregon         26.636
+    28                Nevada         23.314
+    47            Washington         21.829
+    32              New York         20.392
+
 
 
 
