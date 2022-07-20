@@ -2,6 +2,7 @@
 `.head()` returns the first few rows of a DataFrame<br />
     
     print(homelessness.head())
+    
     region       state  individuals  family_members  state_pop
     0  East South Central     Alabama       2570.0           864.0    4887681
     1             Pacific      Alaska       1434.0           582.0     735139
@@ -13,6 +14,7 @@
 
     # Print the head of the homelessness data
     print(homelessness.info())
+    
     <class 'pandas.core.frame.DataFrame'>
     Int64Index: 51 entries, 0 to 50
     Data columns (total 5 columns):
@@ -31,13 +33,14 @@
 
     # Print the head of the homelessness data
     print(homelessness.shape)
+    
     (51, 5)
-
 
 `.describe()` calculates a few summary statistics for each column<br />
 
     # Print the head of the homelessness data
     print(homelessness.describe())
+           
            individuals  family_members  state_pop
     count       51.000          51.000  5.100e+01
     mean      7225.784        3504.882  6.406e+06
