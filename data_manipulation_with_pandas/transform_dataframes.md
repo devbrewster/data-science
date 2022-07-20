@@ -1,4 +1,4 @@
-## Data Manipulation with pandas
+## Transforming DataFrames
 
 `.head()` returns the first few rows of a DataFrame<br />
     
