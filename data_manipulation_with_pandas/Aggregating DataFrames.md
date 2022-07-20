@@ -1,20 +1,4 @@
 ## Summary statistics
-|                  | |
-| ---------------- | ---------------- |
-|`.mean()` | |
-|`.median()` | |
-|`.mode()` | |
-|`.min()` | |
-|`.max()` | |
-|`.var()` | |
-|`.std()` | |
-|`.sum()` | |
-|`.qunatile()` | |
-|`.agg()` | |
-|`.cumsum()` | |
-|`.cummax()` | |
-|`.cummin()` | |
-|`.cumprod()` | |
 
 ## Mean and median
 
