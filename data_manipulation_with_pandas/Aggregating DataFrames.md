@@ -322,4 +322,94 @@
     type                                                                            
     A           3.879  8.992  7.973  8.067                0.664  1.107  0.745  0.735
     B           7.170  9.765  9.279  9.199                0.760  1.108  0.806  0.803
+    
+## Pivoting on one variable  
+### Get the mean `weekly_sales` by `type` using `.pivot_table()` and store as `mean_sales_by_type`.
+### Pivot for mean weekly_sales for each store type
+`mean_sales_by_type = sales.pivot_table(values='weekly_sales', index='type')`
+
+### Print mean_sales_by_type
+`print(mean_sales_by_type)`
+    
+          weekly_sales
+    type              
+    A        23674.667
+    B        25696.678
+
+### Get the mean and median (using NumPy functions) of `weekly_sales` by `type` using `.pivot_table()` and store as `mean_med_sales_by_type`.
+### Import NumPy as np
+`import numpy as np`
+
+### Pivot for mean and median weekly_sales for each store type
+`mean_med_sales_by_type = sales.pivot_table(values='weekly_sales', index='type', aggfunc=[np.mean, np.median])`
+
+### Print mean_med_sales_by_type
+`print(mean_med_sales_by_type)`
+
+                 mean       median
+         weekly_sales weekly_sales
+    type                          
+    A       23674.667     11943.92
+    B       25696.678     13336.08
+
+### Get the mean of `weekly_sales` by `type` and `is_holiday` using `.pivot_table()` and store as `mean_sales_by_type_holiday`.
+### Pivot for mean weekly_sales by store type and holiday 
+`mean_sales_by_type_holiday = sales.pivot_table(values='weekly_sales', index='type', columns='is_holiday')`
+
+### Print mean_sales_by_type_holiday
+`print(mean_sales_by_type_holiday)`
+
+    is_holiday      False     True
+    type                          
+    A           23768.584  590.045
+    B           25751.981  810.705
+
+## Fill in missing values and sum values with pivot tables
+### Print the mean `weekly_sales` by `department` and `type`, filling in any missing values with `0`.
+`print(sales.pivot_table(values='weekly_sales', index='type', columns='department', fill_value=0))`
+
+    department         1           2          3          4          5   ...          95         96         97         98       99
+    type                                                                ...                                                      
+    A           30961.725   67600.159  17160.003  44285.399  34821.011  ...  123933.787  21367.043  28471.267  12875.423  379.124
+    B           44050.627  112958.527  30580.655  51219.654  63236.875  ...   77082.102   9528.538   5828.873    217.428    0.000
+    
+    [2 rows x 80 columns]
+    
+### Print the mean `weekly_sales` by `department` and `type`, filling in any missing values with `0` and summing all rows and columns.
+`print(sales.pivot_table(values="weekly_sales", index="department", columns="type", fill_value=0, margins=True))`
+  
+    type                A           B        All
+    department                                  
+    1           30961.725   44050.627  32052.467
+    2           67600.159  112958.527  71380.023
+    3           17160.003   30580.655  18278.391
+    4           44285.399   51219.654  44863.254
+    5           34821.011   63236.875  37189.000
+    ...               ...         ...        ...
+    96          21367.043    9528.538  20337.608
+    97          28471.267    5828.873  26584.401
+    98          12875.423     217.428  11820.590
+    99            379.124       0.000    379.124
+    All         23674.667   25696.678  23843.950
+
+    [81 rows x 3 columns]
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
