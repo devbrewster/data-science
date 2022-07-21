@@ -157,7 +157,7 @@
     6820     19    A          48 2011-09-09        197.00        True         20.156                 1.038         7.806
 
 ### Print date col of holiday_dates
-`print(holiday_dates['date'])`    
+`print(holiday_dates['date'])`<br />    
 
     498    2010-09-10
     691    2011-11-25
@@ -170,15 +170,131 @@
 
 ### Counting categorical variables
 
+### Count the number of stores of each type
+`store_counts = store_types['type'].value_counts()`<br />
+`print(store_counts)`<br />
 
+    A    11
+    B     1
+    Name: type, dtype: int64
+
+
+### Get the proportion of stores of each type
+`store_props = store_types['type'].value_counts(normalize=True)`<br />
+`print(store_props)`<br />
+
+    A    0.917
+    B    0.083
+    Name: type, dtype: float64
+
+
+### Count the number of each department number and sort
+`dept_counts_sorted = store_depts['department'].value_counts(sort=True)`<br />
+`print(dept_counts_sorted)`<br />
+
+    1     12
+    55    12
+    72    12
+    71    12
+    67    12
+          ..
+    37    10
+    48     8
+    50     6
+    39     4
+    43     2
+    Name: department, Length: 80, dtype: int64
+
+
+### Get the proportion of departments of each number and sort
+`dept_props_sorted = store_depts['department'].value_counts(sort=True, normalize=True)`<br />
+`print(dept_props_sorted)`<br />
+
+    1     0.013
+    55    0.013
+    72    0.013
+    71    0.013
+    67    0.013
+          ...  
+    37    0.011
+    48    0.009
+    50    0.006
+    39    0.004
+    43    0.002
+    Name: department, Length: 80, dtype: float64
+
+## Grouped summary statistcs
+###What percent of sales occurred at each store type?
+### Calc total weekly sales
+`sales_all = sales["weekly_sales"].sum()`<br />
+`print(sales_all)`<br />
+
+    256894718.89999998
+
+### Subset for type A stores, calc total weekly sales
+`sales_A = sales[sales["type"] == "A"]["weekly_sales"].sum()`<br />
+`print(sales_A)`<br />
+
+    233716315.01
+
+### Subset for type B stores, calc total weekly sales
+`sales_B = sales[sales["type"] == "B"]["weekly_sales"].sum()`<br />
+`print(sales_B)`<br />
+
+    23178403.89
+
+### Subset for type C stores, calc total weekly sales
+`sales_C = sales[sales["type"] == "C"]["weekly_sales"].sum()`<br />
+`print(sales_C)`<br />
+
+    0.0
+
+### Get proportion for each type
+`sales_propn_by_type = [sales_A, sales_B, sales_C] / sales_all`<br />
+`print(sales_propn_by_type)`<br />
     
     
+    [0.9097747 0.0902253 0.       ]
+    
+### Calculations with .groupby()
+### Group by type; calc total weekly sales
+`sales_by_type = sales.groupby("type")["weekly_sales"].sum()`<br />
+`print(sales_by_type)`<br />
+    
+    type
+    A    2.337e+08
+    B    2.318e+07
+    Name: weekly_sales, dtype: float64
+### Get proportion for each type
+
+
+### Group by type; calc total weekly sales
+`sales_by_type = sales.groupby("type")["weekly_sales"].sum()`
+
+### Get proportion for each type
+`sales_propn_by_type = sales_by_type / sum(sales.weekly_sales)`
+`print(sales_propn_by_type)`
+    
+    type
+    A    0.91
+    B    0.09
+    Name: weekly_sales, dtype: float64
     
     
+### From previous step
+`sales_by_type = sales.groupby("type")["weekly_sales"].sum()`
+
+### Group by type and is_holiday; calc total weekly sales
+`sales_by_type_is_holiday = sales.groupby.sum(['type', 'is_holiday']['weekly_sales'].sum())`
+`print(sales_by_type_is_holiday)`
+
+    type  is_holiday
+    A     False         2.337e+08
+          True          2.360e+04
+    B     False         2.318e+07
+          True          1.621e+03
+    Name: weekly_sales, dtype: float64
     
-    
-    
-    
-    
-    
-    
+
+
+
