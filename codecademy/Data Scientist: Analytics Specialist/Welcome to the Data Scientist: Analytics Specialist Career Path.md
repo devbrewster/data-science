@@ -1,3 +1,4 @@
+# Welcome to the Data Scientist: Analytics Specialist Career Path
 ## Exploring Data with SQL
 `database` is a set of data stored in a computer, usually structured in <em>tables</em>. 
 
