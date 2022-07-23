@@ -62,23 +62,3 @@ WHERE id IS 1;
 --Great job! Let’s take a look at the result one last time:
 
 SELECT * FROM friends;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
