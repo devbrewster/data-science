@@ -3,6 +3,9 @@
 ## For Windows machines:<br />
 
 Download the `sqlite-tools-win32-x86-3200100.zip` file and unzip it.<br />
+
+Download [sqlite3](https://www.sqlite.org/download.html)
+
 From your `git-bash terminal`, open the directory of the unzipped folder with `cd ~/Downloads/sqlite-tools-win32-x86-3200100/sqlite-tools-win32-x86-3200100/`.<br />
 Try running sqlite with the command `winpty ./sqlite3.exe`. If that command opens a `sqlite>` prompt, congratulations! You’ve installed SQLite.<br />
 
