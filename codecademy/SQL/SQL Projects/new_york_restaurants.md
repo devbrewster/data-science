@@ -88,19 +88,3 @@
       END AS 'Review'
     FROM nomnom;
 ![image](https://user-images.githubusercontent.com/40252813/180625368-906c466d-24cf-464e-b806-cd219edf56ad.png)
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
