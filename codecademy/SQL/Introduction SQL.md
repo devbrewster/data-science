@@ -9,6 +9,12 @@
 | `UPDATE` | edits a row in a table. |
 | `DELETE FROM` | deletes rows from a table. |
 
+#### Common data types in `SQL`
+    Integers - Whole numbers.<br />
+    Text - Text strings.<br />
+    Date - a date.<br />
+    Real - a decimal number.<br />
+
 ## **Statements**
 A statement is text that the database recognizes as a valid command. Statements always end in a semicolon `;`.<br />
 
