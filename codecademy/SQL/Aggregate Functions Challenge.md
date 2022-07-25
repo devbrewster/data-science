@@ -93,6 +93,7 @@ Use one query and rename the results to max and min.<br />
       MIN(watch_duration_in_minutes) AS 'min'
     FROM watch_history;
     
+![image](https://user-images.githubusercontent.com/40252813/180700404-42f95548-a643-49ab-a48d-5a59425d5ff4.png)
 
 
 
