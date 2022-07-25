@@ -49,7 +49,9 @@ Find the categories HAVING more than 100 pieces.<br />
     HAVING COUNT(*) > 100;
 ![image](https://user-images.githubusercontent.com/40252813/180704708-131cc655-5253-410d-8a8d-bf155cbd0ef2.png)
 
-
+Lastly, let’s look at some bling! <br />
+Count the number of pieces where the medium contains ‘gold’ or ‘silver’. <br />
+And sort in descending order.<br />
 
     SELECT CASE
         WHEN medium LIKE '%gold%' THEN 'Gold'
@@ -61,3 +63,4 @@ Find the categories HAVING more than 100 pieces.<br />
     WHERE Material IS NOT NULL
     GROUP BY 1
     ORDER BY 2 DESC;
+![image](https://user-images.githubusercontent.com/40252813/180705727-90471288-dcaa-4936-ad6d-bf9a020470db.png)
