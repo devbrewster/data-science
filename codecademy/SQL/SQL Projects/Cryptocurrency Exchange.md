@@ -57,9 +57,16 @@ And group everything by date.<br />
       ROUND(AVG(money_out)) AS 'Money Out'
     FROM transactions
     GROUP BY 1;
+![image](https://user-images.githubusercontent.com/40252813/180709377-4d682a38-9e4b-4d57-8b53-ebfe608c221f.png)
 
 
 To make the previous query easier to read, round the averages to 2 decimal places. <br />
 Give the column aliases using AS for readability.<br />
 
+    SELECT date AS 'DATE', 
+      ROUND(AVG(money_in), 2) AS 'AVG Money In',
+      ROUND(AVG(money_out), 2) AS 'AVG Money Out'
+    FROM transactions
+    GROUP BY 1;
+![image](https://user-images.githubusercontent.com/40252813/180709692-3a523247-d78c-46d7-b8a1-d052a5fb8f8c.png)
 
